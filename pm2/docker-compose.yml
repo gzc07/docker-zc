@@ -1,0 +1,12 @@
+version: "3"
+services:
+  web-pm2:
+    container_name: web-pm2
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app
+    ports:
+      - "3000:3000"
+    tty: true

@@ -1,0 +1,14 @@
+version: "3"
+services:
+  web-jekyll:
+    container_name: web-jekyll
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/var/project/jekyll
+    ports:
+      - "4000:4000"
+    tty: true
+
+  # docker run --rm --volume="./src:/srv/jekyll"  -it jekyll/jekyll jekyll build
